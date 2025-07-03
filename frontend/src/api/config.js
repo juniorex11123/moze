@@ -2,9 +2,10 @@
 export const getApiUrl = () => {
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
   
-  // If REACT_APP_BACKEND_URL is empty or undefined, use relative path (proxy)
+  // Always use REACT_APP_BACKEND_URL from environment
   if (!backendUrl || backendUrl.trim() === '') {
-    return '';
+    console.warn('REACT_APP_BACKEND_URL not set, falling back to localhost');
+    return 'http://localhost:8001';
   }
   
   return backendUrl;
