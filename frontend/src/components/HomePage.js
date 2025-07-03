@@ -105,80 +105,115 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="text-center space-y-4">
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+        {/* Call to Action Section */}
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl mx-4 sm:mx-6 lg:mx-8 mb-16">
+          <div className="px-8 py-16 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Gotowy na rozpoczęcie?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Dołącz do tysięcy firm, które już korzystają z Time Tracker Pro do zarządzania czasem pracy
+            </p>
             <Link
               to="/app"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
+              className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-blue-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1"
             >
-              Przejdź do Systemu
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg className="mr-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
+              Rozpocznij ewidencję czasu
             </Link>
-            <a
-              href="https://github.com/juniorex11123/finalfinalfinal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
-            >
-              <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
-              </svg>
-              Zobacz Kod Źródłowy
-            </a>
           </div>
         </div>
 
-        {/* Repository Information */}
-        <div className="mt-16 bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Informacje o Repozytorium</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-3">Technologie</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                  Frontend: React + Tailwind CSS
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                  Backend: FastAPI + SQLite
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                  Skanowanie QR kodów
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
-                  System Multi-Tenant
-                </li>
-              </ul>
+        {/* Technology and Features Information */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Zaawansowane technologie</h2>
+              <p className="text-lg text-gray-600">Time Tracker Pro wykorzystuje najnowsze rozwiązania dla maksymalnej wydajności</p>
             </div>
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-3">Funkcjonalności</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-red-400 rounded-full mr-3"></span>
-                  Zarządzanie pracownikami
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
-                  Śledzenie czasu pracy
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
-                  Generowanie raportów
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>
-                  System uprawnień
-                </li>
-              </ul>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <svg className="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Technologie
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Frontend:</span> React + Tailwind CSS
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Backend:</span> FastAPI + SQLite
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-purple-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Skanowanie:</span> Kody QR + Camera API
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-orange-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Architektura:</span> System Multi-Tenant
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <svg className="w-6 h-6 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Kluczowe funkcjonalności
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-red-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Zarządzanie:</span> Kompleksowa obsługa pracowników
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Ewidencja:</span> Precyzyjne śledzenie czasu
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-pink-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Raporty:</span> Szczegółowe analizy i statystyki
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3"></span>
+                    <span className="font-medium mr-2">Bezpieczeństwo:</span> Zaawansowany system uprawnień
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold">Time Tracker Pro</h3>
+              </div>
+              <p className="text-gray-400 mb-8 max-w-md mx-auto">
+                Profesjonalny system do ewidencji czasu pracy - zarządzaj czasem swojego zespołu efektywnie i precyzyjnie.
+              </p>
+              <div className="pt-8 border-t border-gray-800">
+                <p className="text-gray-500">&copy; 2024 Time Tracker Pro. System do ewidencji czasu pracy.</p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
