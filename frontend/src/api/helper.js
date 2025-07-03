@@ -1,7 +1,7 @@
 // API Helper with automatic endpoint detection
 class ApiHelper {
   constructor() {
-    this.baseUrl = '';
+    this.baseUrl = process.env.REACT_APP_BACKEND_URL || '';
     this.endpointTested = false;
   }
 
@@ -10,35 +10,30 @@ class ApiHelper {
       return this.baseUrl;
     }
 
-    // Test endpoints in order of preference
-    const endpoints = [
-      '', // Relative path (proxy)
-      'http://localhost:8001', // Direct backend
-      window.location.origin, // Same origin
-    ];
-
-    for (const endpoint of endpoints) {
+    // Use REACT_APP_BACKEND_URL from environment
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    if (backendUrl && backendUrl.trim() !== '') {
       try {
-        const response = await fetch(`${endpoint}/api/`, {
+        const response = await fetch(`${backendUrl}/api/`, {
           method: 'GET',
           timeout: 5000
         });
         
         if (response.ok) {
-          this.baseUrl = endpoint;
+          this.baseUrl = backendUrl;
           this.endpointTested = true;
-          console.log('API endpoint detected:', this.baseUrl || 'proxy');
+          console.log('API endpoint detected:', this.baseUrl);
           return this.baseUrl;
         }
       } catch (error) {
-        console.warn(`Failed to connect to ${endpoint}/api/`, error);
+        console.warn(`Failed to connect to ${backendUrl}/api/`, error);
       }
     }
 
-    // Fallback to empty string (proxy)
-    this.baseUrl = '';
+    // Fallback to localhost
+    this.baseUrl = 'http://localhost:8001';
     this.endpointTested = true;
-    console.warn('No API endpoint detected, using proxy');
+    console.warn('Using fallback API endpoint:', this.baseUrl);
     return this.baseUrl;
   }
 
